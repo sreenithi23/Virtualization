@@ -1,102 +1,222 @@
-# Virtualization
-Ex.4 Deployment and configuration of a Private Cloud  in AWS
+# Ex.3(A-C) Virtualization: Installation and Configuration of Oracle VirtualBox & Kali Linux, and Execution of Linux Commands
+### NAME: Afifa A
+### REG NO:212223040008
 
-Aim:
-To set up of a Private Cloud  in AWS.
+## Aim:
+To set up a virtualized environment using Oracle VirtualBox, install Kali Linux as a guest OS, and execute fundamental Linux commands.
 
-Setting up of a private cloud in AWS:
+## 3.a) Installation and Configuration of Oracle VirtualBox
 
-Setting up a private cloud within AWS, also known as a Virtual Private Cloud (VPC),
-involves creating a logically isolated virtual network that you can use to launch AWS
-resources. This provides you with full control over your virtual networking environment,
-including resource placement, connectivity, and security.
-Amazon Virtual Private Cloud (Amazon VPC) gives you full control over your virtual
-networking environment, including resource placement, connectivity, and security. Get
-started by setting up your VPC in the AWS service console. Next, add resources to it such as
-Amazon Elastic Compute Cloud (EC2) and Amazon Relational Database Service (RDS)
-instances. Finally, define how your VPCs communicate with each other across accounts,
-Availability Zones, or AWS Regions.
+## Aim:
+To install and configure Oracle VM VirtualBox.
 
-Procedure:
-1. Plan Your VPC:
-● Determine your needs:
-Define your use case, including application requirements, security needs, and
-compliance standards.
-● Plan IP address ranges:
-Choose appropriate IP address ranges for your VPC and subnets to avoid conflicts.
-● Select Availability Zones:
-Decide which Availability Zones (AZs) you'll use for your resources, considering
-redundancy and performance.
-● Plan internet connectivity:
-Determine if you need public internet access and how to configure it.
-● Define security:
-Plan your security groups, network ACLs, and access controls to ensure a secure
-environment.
+## Pre-requisites:
 
-3. Create Your VPC:
-Sign in to AWS Management Console: Access the VPC console and navigate to the VPC dashboard.
- Choose "Create VPC": Initiate the VPC creation process.
-Configure VPC details: Enter the VPC name, CIDR block, Availability Zones, and
-other necessary settings.
-Create subnets: Define subnets within your VPC to isolate different parts of your
-network.
-Create route tables: Specify how traffic is routed within and outside the VPC.
- Create security groups: Define access control rules for your resources.
+* Machine with Internet access
+* Minimum 4 GB RAM
+* Sufficient storage space
 
-4. Deploying Resources:
-Launch EC2 instances: Create and launch virtual machines within your VPC.
- Set up RDS instances: Deploy databases for your applications.
-Configure networking: Connect your resources to the appropriate subnets, security
-groups, and route tables.
-Deploy other AWS services: Integrate other services like S3 for storage and Lambda for serverless computing.
+## Steps:
+1. Download Oracle VM VirtualBox:
 
-5.Managing and Monitoring:
-Use AWS CloudWatch: Monitor your VPC and resources for performance and
-health.
-Configure logging and auditing: Track access and activity within your VPC for
-security and compliance.
-Implement security best practices: Regularly review and update your security
-configuration.
-Scale and adjust as needed: Adjust your VPC infrastructure to meet changing
-demands.
+    * Visit Oracle VirtualBox Official Site
+    * Download installer for your OS (Windows/macOS/Linux).
+2. Install Oracle VM VirtualBox (Example: Windows):
 
-Output:
+    * Launch Installer → Allow Changes → Click Next.
+    * Choose Installation Options → Click Next.
+    * Accept Network Interface Warning → Click Yes.
+    * Click Install.
+    * Finish Installation and Launch VirtualBox.
+3. Configure VirtualBox:
 
-Create VPC:
+    * Open VirtualBox.
+    * Click New → Name VM → Select Type (Linux/Windows) and Version.
+    * Allocate:
+        * Minimum 2 GB RAM
+        * Create Virtual Hard Disk (20 GB recommended).
+    * Start Virtual Machine and provide ISO to install OS.
 
-![Screenshot 2025-05-13 132155](https://github.com/user-attachments/assets/a97fd5ad-b36b-46c0-a049-25e9e9b9ade5)
+## Result:
+Thus, Oracle VM VirtualBox was installed successfully.
 
-Configure subnets:
+## 3.b) Installation and Configuration of Kali Linux
 
-![Screenshot 2025-05-13 132309](https://github.com/user-attachments/assets/e418b198-4f05-4d26-8072-529dce5d904a)
+## Aim:
+To install and configure Kali Linux in Oracle VirtualBox.
 
-![Screenshot 2025-05-13 132325](https://github.com/user-attachments/assets/77255511-c7b8-490e-a288-148e39f13e13)
+## Pre-requisites:
+* Oracle VM VirtualBox Installed
+* 4 GB RAM and 20 GB Storage Minimum
+* Kali Linux ISO image
 
-Setting Internet Gateway:
+## Steps:
+1. Download Kali Linux ISO:
 
-![Screenshot 2025-05-13 132456](https://github.com/user-attachments/assets/a68bd286-8101-4b4c-aef7-5d2be2c40ec2)
+    * Visit Kali Linux Official Site
+    * Download 64-bit ISO (Installer version).
+2. Create a New Virtual Machine:
 
-![Screenshot 2025-05-13 132511](https://github.com/user-attachments/assets/74252b1a-add0-47c1-b482-185e0ee263ba)
+    * Open VirtualBox → Click New.
+    * Name: "Kali Linux" → Type: Linux → Version: Debian (64-bit).
+3. Allocate Memory:
 
-![Screenshot 2025-05-13 132525](https://github.com/user-attachments/assets/2be72b29-321a-498d-9994-856aa199e7c2)
+    * Minimum 2 GB RAM (recommended 4 GB).
+4. Create Virtual Hard Disk:
 
-Creating Route Table:
+    * Select VDI (VirtualBox Disk Image).
+    * Choose Dynamically allocated.
+    * Set Disk size to 20 GB or more.
+5. Configure ISO Image:
 
-![Screenshot 2025-05-13 132731](https://github.com/user-attachments/assets/ed8136ca-ff43-4627-9582-bb9a2c470a54)
+    * Settings → Storage → Controller: IDE → Empty CD → Choose Disk File → Select Kali Linux ISO.
+6. Start Installation:
 
-Configuring Route Table:
+    * Boot Virtual Machine → Choose Graphical Install.
+    * Set Language, Region, Keyboard.
+    * Configure Network → Set Hostname (e.g., kali).
+    * Set root password.
+    * Disk Partitioning: Use entire disk → All files in one partition.
+    * Install System → Install GRUB Bootloader → Finish Installation.
+7. Login to Kali Linux:
 
-![Screenshot 2025-05-13 132743](https://github.com/user-attachments/assets/ee51f140-2bb4-4cfe-8d01-2ed65c6a4f2c)
+    * Use root credentials.
+8. (Optional) Install Guest Additions:
 
-Editing Routes:
+    * Devices → Insert Guest Additions CD Image → Follow steps inside Kali.
 
-![Screenshot 2025-05-13 132801](https://github.com/user-attachments/assets/99d77a5f-95b7-4f70-889a-2795c53c8b0a)
+## Snapshots:
+AWS Account Creation Snapshot
 
-Creating Route Table:
+Snapshot 1: Installing Oracle VirtualBox
+![image](https://github.com/user-attachments/assets/737dafde-fd5d-4266-849a-a12013ce9c5b)
 
-![Screenshot 2025-05-13 132833](https://github.com/user-attachments/assets/bc81ab2e-3f62-4d72-b038-cbd939745206)
+Snapshot 2: Kali Running in Virtual
+![image](https://github.com/user-attachments/assets/6b08c65e-e2c0-4f8e-a782-0914a3470759)
 
-Result:
+## Result:
+Thus, Kali Linux guest OS was installed and configured successfully.
 
-Thus, a private cloud on AWS involves using VPCs has been created for  a dedicated, isolated network where we can manage our resources and control access according to our requirements.
+## 3.c) Execution of Linux Commands in Kali
 
+## About Linux:
+* Open-source operating system.
+* Kernel manages communication between hardware and software.
+* Commands are case-sensitive.
+
+## Linux Commands:
+1. ls Command
+    
+    The ls command is used to display a list of content of a directory.
+
+### Syntax:
+```
+ls
+```
+![image](https://github.com/user-attachments/assets/65cbb685-53e1-4d50-b109-2d3a73e366dc)
+
+2. pwd Command
+
+    The pwd command is used to display the location of the current working directory.
+
+### Syntax: 
+```
+pwd
+```
+![image](https://github.com/user-attachments/assets/06a87e8c-9f1f-4f33-9c75-d9a5f75c8d60)
+
+
+3. mkdir Command
+
+    The mkdir command is used to create a new directory under any directory.
+
+### Syntax: 
+```
+mkdir <directory_name>
+```
+![image](https://github.com/user-attachments/assets/1b1790eb-a58c-4bbb-a2b7-ee9ab6051a93)
+
+
+4. rmdir Command
+
+    The rmdir command is used to delete a directory.
+
+### Syntax: 
+```
+rmdir <directory_name>
+```
+![image](https://github.com/user-attachments/assets/5002fe8b-4414-42d0-8519-3d1f452fbafb)
+
+
+5. cd Command
+The cd command is used to change the current directory
+
+### Syntax: 
+```
+cd <directory_name>
+```
+![image](https://github.com/user-attachments/assets/84cead37-3512-4e54-8884-427cb99b15fc)
+
+
+6. cat Command
+
+    The cat command is a multi-purpose utility in the Linux system. It can be used to create a file, display content ofthe file, copy the content of one file to another file, and more.
+
+### Syntax: 
+```
+cat [options] [file_name]
+```
+![image](https://github.com/user-attachments/assets/2361932b-99fc-4118-9097-bd9bdce384f0)
+
+![image](https://github.com/user-attachments/assets/4c6d451f-4bfc-48f1-b4cd-0217fef9e06c)
+
+7. cp Command
+
+    The cp command is used to copy a file or directory.
+### Syntax: 
+```
+cp [source] [destination]
+```
+![image](https://github.com/user-attachments/assets/4e377a91-23d4-4169-a66b-f88af203a60b)
+
+
+![image](https://github.com/user-attachments/assets/1edbd41c-31c2-4a94-8e7f-be35155e35e5)
+
+
+8. mv Command
+
+    The mv command is used to move a file or a directory form one location to another location.
+
+### Syntax: 
+```
+mv [source] [destination]
+```
+![image](https://github.com/user-attachments/assets/fd4832ba-1dad-45a7-a213-a5f28ca508db)
+
+
+![image](https://github.com/user-attachments/assets/16138df9-da4a-4070-a936-29f251178773)
+
+
+9. touch Command
+
+    Create empty file.
+
+### Syntax: 
+```
+touch [filename]
+```
+![image](https://github.com/user-attachments/assets/0ee05807-fe42-4579-a1bf-6562904fd7b1)
+
+
+10. vi Command
+
+    Edit file contents using editor.
+
+### Syntax: 
+```
+vi [filename]
+```
+![image](https://github.com/user-attachments/assets/77ca13f3-45d7-4da6-88af-cdd2e280f41b)
+
+## Result:
+Thus, various Linux commands were executed successfully in Kali Linux virtual machine.
