@@ -1,6 +1,6 @@
 # Ex.3(A-C) Virtualization: Installation and Configuration of Oracle VirtualBox & Kali Linux, and Execution of Linux Commands
-### NAME: Afifa A
-### REG NO:212223040008
+### REG: 212223220109
+### NAME:sreenithi
 
 ## Aim:
 To set up a virtualized environment using Oracle VirtualBox, install Kali Linux as a guest OS, and execute fundamental Linux commands.
